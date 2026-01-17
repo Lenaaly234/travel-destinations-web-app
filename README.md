@@ -10,7 +10,7 @@ A full-stack web application to browse and search travel destinations. Includes 
 
 ## Tech Stack
 - Node.js, Express.js
-- MongoDB (Mongoose)
+- MongoDB 
 - EJS templating
 - HTML/CSS, JavaScript
 
