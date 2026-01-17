@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-image: url("background2.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            -webkit-text-stroke: 1px blue;
+        }
+        .cont {
+            position: relative;
+            left: 600px;
+            top: 50px;
+            color: white;
+            -webkit-text-stroke: 0.5px black;
+        }
+        .error {
+            color: #ff6b6b;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Registration</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Registration</h1>
+    </div>
+
+    <div class="cont">
+
+        <!-- ERROR MESSAGE -->
+        <% if (error) { %>
+          <div class="error"><%= error %></div>
+        <% } %>
+
+        <form method="post" action="/registration">
+            Username: <br>
+            <input type="text" name="username"> <br>
+            Password: <br>
+            <input type="password" name="password"> <br><br>
+            <input type="submit" class="btn btn-secondary" value="Register">
+        </form>
+
+    </div>
+
+</body>
+</html>

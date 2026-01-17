@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+
+    <style>
+        body {
+            background-image: url("background3.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            -webkit-text-stroke: 1px blue;
+        }
+
+        .cont {
+            position: relative;
+            left: 600px;
+            top: 50px;
+            color: white;
+        }
+    </style>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+    </div>
+
+    <div class="cont">
+        <form method="POST" action="/login">
+            Username:<br>
+            <input type="text" name="username" required>
+            <br><br>
+            Password:<br>
+            <input type="password" name="password" required>
+            <br><br>
+            <input type="submit" value="Login" class="btn btn-primary">
+        </form>
+
+        <br>
+        <a href="/registration">I don't have an account</a>
+    </div>
+</body>
+</html>

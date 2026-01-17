@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <style>
+        body {
+            background-image: url("background3.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            -webkit-text-stroke: 1px blue;
+        }
+        .cont {
+            position: relative;
+            left: 600px;
+            top: 50px;
+            color: white;
+            -webkit-text-stroke: 0.5px black;
+        }
+        .container1 {
+            position: fixed;
+            left: 50px;
+            top: 150px;
+            color: white;
+        }
+        .container2 {
+            position: fixed;
+            left: 300px;
+            top: 150px;
+            color: white;
+        }
+        #label1 {
+            position: relative;
+            right: -55px;
+        }
+        #label2 {
+            position: relative;
+            right: -50px;
+        }
+        #paris, #rome {
+            position: relative;
+            left: 50px;
+        }
+    </style>
+        <meta charset="UTF-8">
+    <title>Cities</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
+        <a class="navbar-brand" style="color: rgb(191, 255, 161)">Cities</a>
+
+        <div class="collapse navbar-collapse">
+<form method="POST" action="/search" class="form-inline my-2 my-lg-0">
+  <input
+    class="form-control mr-sm-2"
+    name="search"
+    type="search"
+    placeholder="Search destination"
+    required
+  >
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+        </div>
+    </nav>
+
+    <!-- PARIS -->
+    <div class="container1">
+        <img src="/paris.png" width="193" height="300">
+        <br>
+        <label id="label1" class="ml-4 my-2">Paris</label>
+        <br>
+        <button onclick="location.href='/paris'" id="paris" class="btn btn-secondary ml-3">
+            View
+        </button>
+    </div>
+
+    <!-- ROME -->
+    <div class="container2">
+        <img src="/rome.png" width="193" height="300">
+        <br>
+        <label id="label2" class="ml-4 my-2">Rome</label>
+        <br>
+        <button onclick="location.href='/rome'" id="rome" class="btn btn-secondary ml-3">
+            View
+        </button>
+    </div>
+
+</body>
+</html>

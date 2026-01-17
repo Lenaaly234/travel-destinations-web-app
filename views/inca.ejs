@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-image: url("background3.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            -webkit-text-stroke: 1px blue;
+        }
+        .container1 {
+            position: fixed;
+            left: 50px;
+            top: 150px;
+            color: white;
+        }
+        .container2 {
+            position: fixed;
+            left: 300px;
+            top: 150px;
+            color: white;
+            width: 300px;
+            text-align: justify;
+        }
+        .video {
+            position: fixed;
+            left: 700px;
+            top: 150px;
+        }
+        .wanttogo {
+            position: fixed;
+            left: 30px;
+            top: 470px;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Inca Trail to Machu Picchu</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
+    <span class="navbar-brand" style="color: rgb(191, 255, 161)">
+        Inca Trail to Machu Picchu
+    </span>
+
+    <!-- SEARCH -->
+<form method="POST" action="/search" class="form-inline my-2 my-lg-0">
+  <input
+    class="form-control mr-sm-2"
+    name="search"
+    type="search"
+    placeholder="Search destination"
+    required
+  >
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+</nav>
+
+<div class="container1">
+    <img src="/inca.png" width="193" height="300">
+</div>
+
+<div class="container2">
+    Peru's Inca Trail is one of the world's most famous hikes,
+    combining breathtaking mountain scenery with ancient Inca ruins.
+</div>
+
+<!-- ✅ WANT-TO-GO  -->
+<div class="wanttogo">
+    <form method="POST" action="/wanttogo">
+        <input type="hidden" name="slug" value="inca">
+        <button type="submit" class="btn btn-secondary">
+            Add to Want-to-Go List
+        </button>
+    </form>
+
+    <% if (error) { %>
+        <p style="color:red"><%= error %></p>
+    <% } %>
+</div>
+
+<!-- VIDEO  -->
+<div class="video">
+    <iframe
+        width="480"
+        height="360"
+        src="https://www.youtube.com/embed/k__GbOiOYz4"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+
+</body>
+</html>

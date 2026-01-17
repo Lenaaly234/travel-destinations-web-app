@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Want-to-Go List</title>
+
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  >
+
+  <style>
+    body {
+      background-image: url("/background3.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+    }
+
+    h1 {
+      -webkit-text-stroke: 1px blue;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.75);
+      border-radius: 12px;
+    }
+
+    a.destination-link {
+      color: #bfffa1;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    a.destination-link:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <span class="navbar-brand" style="color: rgb(191, 255, 161)">
+      Want-to-Go List
+    </span>
+
+    <a href="/home" class="btn btn-outline-light ml-auto">
+      Back to Home
+    </a>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="container d-flex justify-content-center">
+    <div class="card p-4 col-md-6">
+
+      <% if (message) { %>
+        <div class="alert alert-warning text-center">
+          <%= message %>
+        </div>
+      <% } %>
+
+      <h1>Your Want-to-Go List</h1>
+
+      <% if (items.length === 0) { %>
+        <p class="text-center">No destinations added yet.</p>
+      <% } else { %>
+        <ul class="list-group list-group-flush">
+          <% items.forEach(item => { %>
+            <li class="list-group-item bg-transparent border-0 text-center">
+              <a class="destination-link" href="/<%= item %>">
+                <%= item.charAt(0).toUpperCase() + item.slice(1) %>
+              </a>
+            </li>
+          <% }) %>
+        </ul>
+      <% } %>
+
+    </div>
+  </div>
+
+</body>
+</html>

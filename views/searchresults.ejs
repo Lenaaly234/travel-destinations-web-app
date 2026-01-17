@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results</title>
+
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <style>
+    body {
+      background-image: url("background3.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 100vh;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      color: white;
+      -webkit-text-stroke: 1px blue;
+    }
+
+    .results-box {
+      width: 50%;
+      margin: 40px auto;
+      background: rgba(0, 0, 0, 0.65);
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    .result-link {
+      color: #bfffbf;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .result-link:hover {
+      text-decoration: underline;
+    }
+
+    .message {
+      color: #ff8080;
+      font-size: 18px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-dark">
+  <span class="navbar-brand" style="color: rgb(191, 255, 161)">
+    Search Results
+  </span>
+
+  <form method="POST" action="/search" class="form-inline ml-auto">
+    <input
+      class="form-control mr-2"
+      name="search"
+      type="search"
+      placeholder="Search destination">
+    <button class="btn btn-outline-success">
+      Search
+    </button>
+  </form>
+</nav>
+
+<h1>Results</h1>
+
+<div class="results-box">
+
+  <!-- MESSAGE (empty / not found) -->
+  <% if (message) { %>
+    <p class="message"><%= message %></p>
+
+  <!-- RESULTS LIST -->
+  <% } else if (results.length > 0) { %>
+    <ul>
+      <% results.forEach(dest => { %>
+        <li>
+          <a class="result-link" href="/<%= dest.slug %>">
+            <%= dest.name %>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  <div class="text-center mt-4">
+    <a href="/home" class="btn btn-secondary">
+      Back to Home
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>
